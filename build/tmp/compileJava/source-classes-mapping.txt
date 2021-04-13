@@ -1,3 +1,26 @@
+command/UnknownCommandHandler.java
+ command.UnknownCommandHandler
+command/ListCommandHandler.java
+ command.ListCommandHandler
+command/RemoveRoleCommandHandler.java
+ command.RemoveRoleCommandHandler
+controller/DiscordEventListener.java
+ controller.DiscordEventListener
+controller/EventHandler.java
+ controller.EventHandler
+ controller.EventHandler$1
+command/CommandHandler.java
+ command.CommandHandler
+controller/ServerController.java
+ controller.ServerController
+controller/DiscordController.java
+ controller.DiscordController
+command/AddRoleCommandHandler.java
+ command.AddRoleCommandHandler
+model/Server.java
+ model.Server
+command/HelpCommandHandler.java
+ command.HelpCommandHandler
 info/CommandInfo.java
  info.CommandInfo
 error/NoSuchRoleException.java
@@ -5,30 +28,7 @@ error/NoSuchRoleException.java
 model/RoleCommand.java
  model.RoleCommand
  model.RoleCommand$Type
-controller/DiscordEventListener.java
- controller.DiscordEventListener
 ui/DiscordTextUI.java
  ui.DiscordTextUI
 error/NoSuchCommandException.java
  error.NoSuchCommandException
-controller/DiscordController.java
- controller.DiscordController
-command/UnknownCommandHandler.java
- command.UnknownCommandHandler
-model/Server.java
- model.Server
-command/RemoveRoleCommandHandler.java
- command.RemoveRoleCommandHandler
-controller/ServerController.java
- controller.ServerController
-command/HelpCommandHandler.java
- command.HelpCommandHandler
-command/CommandHandler.java
- command.CommandHandler
-command/ListCommandHandler.java
- command.ListCommandHandler
-controller/EventHandler.java
- controller.EventHandler
- controller.EventHandler$1
-command/AddRoleCommandHandler.java
- command.AddRoleCommandHandler
