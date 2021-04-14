@@ -1,4 +1,5 @@
 package controller;
+import com.sun.net.httpserver.HttpServer;
 import model.RoleCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -10,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.security.auth.login.LoginException;
+import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -22,7 +25,8 @@ public class DiscordController {
             jda = Objects.requireNonNull(startJDA(discordEventListener));
             serverController.initServerMap(jda);
             jda.getPresence().setActivity(Activity.listening(RoleCommand.COMMAND_PREFIX + "help"));
-        } catch (LoginException e) {
+            HttpServer server = HttpServer.create(new InetSocketAddress(Integer.parseInt(System.getenv("PORT"))), 0);
+        } catch (LoginException | IOException e) {
             e.printStackTrace();
         }
     }
