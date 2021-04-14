@@ -1,1 +1,1 @@
-web: java -jar build/libs/Candace-1.0.jar
+web: java -jar build/libs/Candace-1.0-all.jar
