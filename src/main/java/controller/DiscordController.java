@@ -15,7 +15,6 @@ import java.util.Objects;
 
 public class DiscordController {
     private JDA jda;
-    private Logger log = LoggerFactory.getLogger(DiscordController.class);
     public DiscordController() {
         try {
             ServerController serverController = new ServerController();
@@ -23,7 +22,6 @@ public class DiscordController {
             jda = Objects.requireNonNull(startJDA(discordEventListener));
             serverController.initServerMap(jda);
             jda.getPresence().setActivity(Activity.listening(RoleCommand.COMMAND_PREFIX + "help"));
-            log.info("Candace started");
         } catch (LoginException e) {
             e.printStackTrace();
         }
@@ -32,8 +30,6 @@ public class DiscordController {
     private JDA startJDA(DiscordEventListener listener) throws LoginException {
         String token = System.getenv("CANDACE_TOKEN");
         if (token == null) {
-            log.error("startJDA() -> Bot Token CANNOT be null! Check the environmental variables to make sure " +
-                    "'CANDACE_TOKEN' exists. If yes, make sure an active token is being used!");
             return null;
         } else {
             return JDABuilder.createDefault(token)
