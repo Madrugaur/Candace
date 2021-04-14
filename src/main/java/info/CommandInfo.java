@@ -12,7 +12,7 @@ public class CommandInfo {
                 { RoleCommand.COMMAND_PREFIX + "help", "Displays this menu, which shows all of my commands and their usage." },
                 { RoleCommand.COMMAND_PREFIX + "add <role name>", "Adds a role to your account, if it exists." },
                 { RoleCommand.COMMAND_PREFIX + "remove <role name>", "Removes a role from your account, if you have it." },
-                { RoleCommand.COMMAND_PREFIX + "list", "List all of the roles for this server." }
+                { RoleCommand.COMMAND_PREFIX + "list <page number>", "List all of the roles for this server." }
         };
     }
 }
