@@ -56,8 +56,8 @@ public class RoleCommand {
 
     private static String parseRequest(String command) {
         StringBuilder builder = new StringBuilder();
-        Arrays.stream(command.split(" ")).skip(1).forEach(builder::append);
-        return builder.toString();
+        Arrays.stream(command.split(" ")).skip(1).forEach( part -> builder.append(part).append(" "));
+        return builder.toString().trim();
     }
 
     private static Type getType(String command) {

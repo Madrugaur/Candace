@@ -19,7 +19,7 @@ public class ListCommandHandler implements CommandHandler{
     private MessageEmbed generateRoleEmbed(Server server) {
         List<Role> roles = server.getRoles();
         EmbedBuilder builder = new EmbedBuilder();
-        builder.setColor(Color.BLUE)
+        builder.setColor(Color.ORANGE)
                 .setTitle(String.format("%s Role List", server.getName()));
         roles.forEach(role -> builder.addField("", role.getName(), true));
         return builder.build();
