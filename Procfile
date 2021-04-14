@@ -1,1 +1,1 @@
-worker: java -jar build/libs/Candace-1.0-all.jar
+web: java -jar build/libs/Candace-1.0-all.jar
