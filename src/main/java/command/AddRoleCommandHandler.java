@@ -28,7 +28,7 @@ public class AddRoleCommandHandler implements CommandHandler {
             DiscordTextUI.sendMessage(addRoleCommand.getChannel(), noSuchRoleException.getMessage());
         } catch (HierarchyException hierarchyException) {
             hierarchyException.printStackTrace();
-            DiscordTextUI.sendMessage(addRoleCommand.getChannel(), "I can't add the role, you're above me in the hierarchy!");
+            DiscordTextUI.sendMessage(addRoleCommand.getChannel(), "I can't add that role, it's power is too great!");
         }
 
     }
