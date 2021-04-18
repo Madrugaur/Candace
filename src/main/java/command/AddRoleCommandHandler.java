@@ -17,7 +17,12 @@ public class AddRoleCommandHandler implements CommandHandler {
             Member member = addRoleCommand.getSender();
             Optional<Role> roleOptional = server.getRole(addRoleCommand.getText());
             if (roleOptional.isEmpty()) throw new NoSuchRoleException(addRoleCommand.getText());
-            addRoleCommand.getGuild().addRoleToMember(member, roleOptional.get()).queue();
+            Role role = roleOptional.get();
+            addRoleCommand.getGuild().addRoleToMember(member, role).queue(
+                    success -> DiscordTextUI.sendMessage(addRoleCommand.getChannel(), role.getName() + " added."),
+                    fail -> DiscordTextUI.sendMessage(addRoleCommand.getChannel(), fail.getMessage())
+            );
+
         } catch (NoSuchRoleException noSuchRoleException) {
             noSuchRoleException.printStackTrace();
             DiscordTextUI.sendMessage(addRoleCommand.getChannel(), noSuchRoleException.getMessage());

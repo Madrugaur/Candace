@@ -17,7 +17,11 @@ public class RemoveRoleCommandHandler implements CommandHandler{
             Member member = command.getSender();
             Optional<Role> roleOptional = server.getRole(command.getText());
             if (roleOptional.isEmpty()) throw new NoSuchRoleException(command.getText());
-            command.getGuild().removeRoleFromMember(member, roleOptional.get()).queue();
+            Role role = roleOptional.get();
+            command.getGuild().removeRoleFromMember(member, role).queue(
+                    success -> DiscordTextUI.sendMessage(command.getChannel(), role.getName() + " added."),
+                    fail -> DiscordTextUI.sendMessage(command.getChannel(), fail.getMessage())
+            );
         } catch (NoSuchRoleException noSuchRoleException) {
             noSuchRoleException.printStackTrace();
             DiscordTextUI.sendMessage(command.getChannel(), noSuchRoleException.getMessage());
