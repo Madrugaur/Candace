@@ -63,10 +63,10 @@ public class RoleCommand {
     private static Type getType(String command) {
         String firstWord = command.replaceFirst(COMMAND_PREFIX, "").split(" ")[0].toLowerCase(Locale.ROOT);
         return switch (firstWord) {
-            case "add" -> Type.ADD;
-            case "remove" -> Type.REMOVE;
-            case "list" -> Type.LIST;
-            case "help" -> Type.HELP;
+            case "add", "a" -> Type.ADD;
+            case "remove", "r" -> Type.REMOVE;
+            case "list", "l" -> Type.LIST;
+            case "help", "h" -> Type.HELP;
             default -> Type.UNKNOWN;
         };
     }
